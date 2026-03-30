@@ -1,5 +1,6 @@
 package com.example.rizkyapps.pertemuan_2
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
@@ -10,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.rizkyapps.R
+import com.example.rizkyapps.pertemuan_3.ThirdActivity
 
 class SecondActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,6 +27,9 @@ class SecondActivity : AppCompatActivity() {
         // Inisialisasi komponen
         val inputNama: EditText = findViewById(R.id.inputNama)
         val btnSubmit: Button = findViewById(R.id.btnSubmit)
+        val btnHal3: Button = findViewById(R.id.btnHalamanTiga)
+
+
 
         btnSubmit.setOnClickListener {
             //Mengambil value dari inputNama dan menampilkan di Logcat
@@ -33,5 +38,11 @@ class SecondActivity : AppCompatActivity() {
 
             Toast.makeText(this, "Anda telah melakukan klik pada tombol Submit $nama", Toast.LENGTH_SHORT).show()
         }
+
+        btnHal3.setOnClickListener {
+            val intent = Intent(this, ThirdActivity::class.java)
+            startActivity(intent)
+        }
+
     }
 }
