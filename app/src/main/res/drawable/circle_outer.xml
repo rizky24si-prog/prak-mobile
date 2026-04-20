@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- File: res/drawable/circle_outer.xml -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="oval">
+    <gradient
+        android:type="linear"
+        android:angle="135"
+        android:startColor="#d6d3d1"
+        android:endColor="#cbd5e1" />
+    <size
+        android:width="128dp"
+        android:height="128dp" />
+</shape>

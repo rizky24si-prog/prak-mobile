@@ -11,6 +11,7 @@ import com.example.rizkyapps.databinding.ActivityMainBinding
 import com.example.rizkyapps.pertemuan_3.ThirdActivity
 import com.example.rizkyapps.pertemuan_4.FourthActivity
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import androidx.core.content.edit
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -24,6 +25,7 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+        val sharedPref = getSharedPreferences("user_pref", MODE_PRIVATE)
 
         binding.btnFourth.setOnClickListener {
             val intent = Intent(this, FourthActivity::class.java)
@@ -39,6 +41,12 @@ class MainActivity : AppCompatActivity() {
                 .setTitle("Konfirmasi")
                 .setMessage("Apakah Anda yakin ingin keluar?")
                 .setPositiveButton("Ya") { dialog, _ ->
+                    sharedPref.edit {
+                        clear()
+                    }
+                    dialog.dismiss()
+                    val intent = Intent(this, AuthActivity::class.java)
+                    startActivity(intent)
                     finish()
                 }
                 .setNegativeButton("Batal") { dialog, _ ->

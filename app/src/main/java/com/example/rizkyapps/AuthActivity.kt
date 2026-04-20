@@ -11,6 +11,7 @@ import androidx.core.view.WindowInsetsCompat
 import com.example.rizkyapps.databinding.ActivityAuthBinding
 import com.example.rizkyapps.pertemuan_2.SecondActivity
 import com.google.android.material.snackbar.Snackbar
+import androidx.core.content.edit
 
 class AuthActivity : AppCompatActivity() {
     private lateinit var binding: ActivityAuthBinding
@@ -25,6 +26,10 @@ class AuthActivity : AppCompatActivity() {
             insets
         }
 
+        //Kode ini harus selalu dipanggil saat butuh akses "user_pref"
+        val sharedPref = getSharedPreferences("user_pref", MODE_PRIVATE)
+
+        //Kondisi jika isLogin bernilai true
 
         binding.btnLogin.setOnClickListener {
 
@@ -32,8 +37,13 @@ class AuthActivity : AppCompatActivity() {
             val password = binding.editTextTextPassword.text.toString()
 
             if (username == password && username.isNotEmpty() && password.isNotEmpty()) {
+                sharedPref.edit {
+                    putBoolean("isLogin", true)
+                    putString("username", username)
+                }
                 val intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)
+                finish()
             }
             else
                 Snackbar.make(binding.root, "Silahkan Coba Lagi", Snackbar.LENGTH_SHORT)
