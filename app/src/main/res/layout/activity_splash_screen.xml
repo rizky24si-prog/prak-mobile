@@ -48,7 +48,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Pertemuan 6"
+            android:text="Binda Desa"
             android:textSize="36sp"
             android:textColor="#57534e"
             android:letterSpacing="0.05"
@@ -58,7 +58,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="MOBILE DEVELOPMENT"
+            android:text="MOBILE"
             android:textSize="12sp"
             android:textColor="#78716c"
             android:letterSpacing="0.15"

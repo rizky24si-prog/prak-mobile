@@ -6,13 +6,11 @@ import android.view.View
 import android.view.animation.AnimationUtils
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.os.postDelayed
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.lifecycleScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
-import java.util.logging.Handler
 
 class SplashScreenActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,17 +23,6 @@ class SplashScreenActivity : AppCompatActivity() {
             insets
         }
 
-        val sharedPref = getSharedPreferences("user_pref", MODE_PRIVATE)
-
-        //Kondisi jika isLogin bernilai true
-        val isLogin = sharedPref.getBoolean("isLogin", false)
-        if (isLogin) {
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
-            finish()
-        }
-
-
         val dot1 = findViewById<View>(R.id.dot1)
         val dot2 = findViewById<View>(R.id.dot2)
         val dot3 = findViewById<View>(R.id.dot3)
@@ -43,14 +30,19 @@ class SplashScreenActivity : AppCompatActivity() {
         val bounce = AnimationUtils.loadAnimation(this, R.anim.bounce_animation)
 
         dot1.startAnimation(bounce)
-
         android.os.Handler().postDelayed({ dot2.startAnimation(bounce) }, 150)
         android.os.Handler().postDelayed({ dot3.startAnimation(bounce) }, 300)
 
         lifecycleScope.launch {
             delay(2000)
 
-            var intent = Intent(this@SplashScreenActivity, AuthActivity::class.java)
+            val sharedPref = getSharedPreferences("user_pref", MODE_PRIVATE)
+            val isLogin = sharedPref.getBoolean("isLogin", false)
+            val intent = if (isLogin) {
+                Intent(this@SplashScreenActivity, MainActivity::class.java)
+            } else {
+                Intent(this@SplashScreenActivity, AuthActivity::class.java)
+            }
             startActivity(intent)
             finish()
         }
