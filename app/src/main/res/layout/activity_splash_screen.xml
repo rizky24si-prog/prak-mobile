@@ -48,7 +48,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Binda Desa"
+            android:text="Bina Desa"
             android:textSize="36sp"
             android:textColor="#57534e"
             android:letterSpacing="0.05"

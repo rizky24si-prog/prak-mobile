@@ -2,14 +2,11 @@ package com.example.rizkyapps
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
-import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.rizkyapps.databinding.ActivityAuthBinding
-import com.example.rizkyapps.pertemuan_2.SecondActivity
 import com.google.android.material.snackbar.Snackbar
 import androidx.core.content.edit
 

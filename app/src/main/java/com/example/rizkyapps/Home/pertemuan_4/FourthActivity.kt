@@ -1,4 +1,4 @@
-package com.example.rizkyapps.pertemuan_4
+package com.example.rizkyapps.Home.pertemuan_4
 
 import android.content.Intent
 import android.os.Bundle
@@ -9,7 +9,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.rizkyapps.R
 import com.example.rizkyapps.databinding.ActivityFourthBinding
-import com.example.rizkyapps.pertemuan_3.ThirdActivity
+import com.example.rizkyapps.Home.pertemuan_3.ThirdActivity
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.snackbar.Snackbar
 

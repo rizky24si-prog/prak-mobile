@@ -1,17 +1,14 @@
-package com.example.rizkyapps.pertemuan_3
+package com.example.rizkyapps.Home.pertemuan_3
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
-import android.widget.EditText
-import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.rizkyapps.R
 import com.example.rizkyapps.databinding.ActivityThirdBinding
-import com.example.rizkyapps.pertemuan_2.SecondActivity
+import com.example.rizkyapps.Home.pertemuan_2.SecondActivity
 
 class ThirdActivity : AppCompatActivity() {
     private lateinit var binding: ActivityThirdBinding

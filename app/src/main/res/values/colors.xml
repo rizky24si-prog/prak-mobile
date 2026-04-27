@@ -4,4 +4,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="primary">#5d7d9a</color>
     <color name="navy">#000042</color>
+    <color name="lemon">#FFE97D</color>
+    <color name="peach">#FF537B</color>
+    <color name="grape">#427AB5</color>
 </resources>

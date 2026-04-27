@@ -1,8 +1,7 @@
-package com.example.rizkyapps.pertemuan_2
+package com.example.rizkyapps.Home.pertemuan_2
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
@@ -11,7 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.rizkyapps.R
-import com.example.rizkyapps.pertemuan_3.ThirdActivity
+import com.example.rizkyapps.Home.pertemuan_3.ThirdActivity
 
 class SecondActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
